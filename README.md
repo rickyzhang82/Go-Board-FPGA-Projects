@@ -1,11 +1,16 @@
 Software
 ========
 
+Download the software from lattice.
+
 - [iCEcube2](http://latticesemi.com/Products/DesignSoftwareAndIP/FPGAandLDS/iCEcube2.aspx)
 - [Diamond Programmer](http://latticesemi.com/Products/DesignSoftwareAndIP/ProgrammingAndConfigurationSw/Programmer.aspx)
 
+
 Fix eth0
 ========
+
+The iCEcube2 license files epxect the NIC card named `eth0`.
 
 Rename the existing ethernet
 
@@ -21,5 +26,19 @@ Rename the existing ethernet
 # PCI device 0x168c:0x002b (ath9k) (custom name provided by external tool)
 SUBSYSTEM=="net", ACTION=="add", DRIVERS=="?*", ATTR{address}=="54:e6:fc:da:f2:07", ATTR{dev_id}=="0x0", ATTR{type}=="1", KERNEL=="wlan*", NAME="wlan0"
 SUBSYSTEM=="net", ACTION=="add", DRIVERS=="?*", ATTR{address}=="04:92:26:c0:4c:6d", NAME="eth0"
+```
 
+
+Fix FTDI USB
+============
+
+Make it accessble to group `dialout`
+
+```
+# Lattice
+SUBSYSTEM=="usb",ACTION=="add",ATTRS{idVendor}=="1134",ATTRS{idProduct}=="8001",MODE=="0666",GROUP=="dialout:x:18:",SYMLINK+="lattice-%n"
+
+# FTDI
+SUBSYSTEM=="usb",ACTION=="add",ATTRS{idVendor}=="0403",ATTRS{idProduct}=="6010",MODE=="0666",GROUP=="dialout:x:18:",SYMLINK+="ftdi-%n"
+SUBSYSTEM=="usb",ATTRS{idVendor}=="0403",ATTRS{idProduct}=="6010",RUN+="/bin/sh -c 'basename %p > /sys/bus/usb/drivers/ftdi_sio/unbind'"
 ```
