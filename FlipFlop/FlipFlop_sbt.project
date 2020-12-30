@@ -12,7 +12,7 @@ DesignCell=Clocked_Logic_Intro
 SynthesisSDCFile=FlipFlop_Implmnt/FlipFlop.scf
 UserPinConstraintFile=
 UserSDCFile=
-PhysicalConstraintFile=
+PhysicalConstraintFile=Go_Board_Constraints.pcf
 BackendImplPathName=
 Devicevoltage=1.14
 DevicevoltagePerformance=+/-5%(datasheet default)
@@ -32,7 +32,7 @@ Version=Lattice Semiconductor Corporation iCEcube - Release: 2017.08.27940 - Bui
 ProjectName=FlipFlop
 Vendor=SiliconBlue
 Synthesis=synplify
-ProjectVFiles=FlipFlop.vhd
+ProjectVFiles=FlipFlop.vhd=work
 ProjectCFiles=Go_Board_Clock_Constraint.sdc
 CurImplementation=FlipFlop_Implmnt
 Implementations=FlipFlop_Implmnt
