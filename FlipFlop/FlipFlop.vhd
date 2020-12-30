@@ -15,7 +15,7 @@ end entity Clocked_Logic_Intro;
 
 architecture RTL of Clocked_Logic_Intro is
     
-    signal r_LED_1      : std_logic := '0';
+    signal r_LED_1      : std_logic := '1';
     signal r_Switch_1   : std_logic := '0';
 
 begin

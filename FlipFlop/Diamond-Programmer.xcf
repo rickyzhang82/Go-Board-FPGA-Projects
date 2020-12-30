@@ -17,13 +17,12 @@
 				<BScanLen>1</BScanLen>
 				<BScanVal>0</BScanVal>
 			</Bypass>
-			<File>/home/Ricky/FPGA-Projects/Go-Board-FPGA-Projects/LookUpTable/LookUpTable_Implmnt/sbt/outputs/bitmap/And_Gate_Project_bitmap.bin</File>
-			<FileTime>12/25/20 17:23:01</FileTime>
-			<JedecChecksum>0xAEB1</JedecChecksum>
+			<File>/home/Ricky/FPGA-Projects/Go-Board-FPGA-Projects/FlipFlop/FlipFlop_Implmnt/sbt/outputs/bitmap/Clocked_Logic_Intro_bitmap.bin</File>
+			<FileTime>12/29/20 23:37:25</FileTime>
+			<JedecChecksum>0xAB5F</JedecChecksum>
 			<Operation>SPI Flash Erase,Program,Verify</Operation>
 			<Option>
 				<SVFVendor>JTAG STANDARD</SVFVendor>
-				<SVFProcessor>SVF Processor</SVFProcessor>
 				<AccessMode>SPI Flash Programming</AccessMode>
 			</Option>
 			<FPGALoader>
@@ -46,8 +45,8 @@
 					<Option>
 						<SVFVendor>JTAG STANDARD</SVFVendor>
 						<IOState>HighZ</IOState>
-						<IOVectorData>ðÑ</IOVectorData>
-						<SVFProcessor>SVF Processor</SVFProcessor>
+						<IOVectorData>`
+=</IOVectorData>
 						<AccessMode>JTAG</AccessMode>
 					</Option>
 				</Device>
@@ -61,7 +60,7 @@
 					<IDCode>0x10</IDCode>
 					<Package>8-pin SOIC</Package>
 					<Operation>SPI Flash Erase,Program,Verify</Operation>
-					<File>/home/Ricky/FPGA-Projects/Go-Board-FPGA-Projects/LookUpTable/LookUpTable_Implmnt/sbt/outputs/bitmap/And_Gate_Project_bitmap.bin</File>
+					<File>/home/Ricky/FPGA-Projects/Go-Board-FPGA-Projects/FlipFlop/FlipFlop_Implmnt/sbt/outputs/bitmap/Clocked_Logic_Intro_bitmap.bin</File>
 					<AddressBase>0x00000000</AddressBase>
 					<EndAddress>0x00008000</EndAddress>
 					<DeviceSize>1</DeviceSize>
@@ -74,15 +73,14 @@
 				<Device>
 					<Pos>1</Pos>
 					<Name></Name>
-					<File>/home/Ricky/FPGA_project/LookUpTable/LookUpTable_Implmnt/sbt/outputs/bitmap/And_Gate_Project_bitmap.bin</File>
+					<File>/home/Ricky/FPGA-Projects/Go-Board-FPGA-Projects/FlipFlop/FlipFlop_Implmnt/sbt/outputs/bitmap/Clocked_Logic_Intro_bitmap.bin</File>
 					<LocalChainList>
 						<LocalDevice index="-99"
 							name="Unknown"
-							file="/home/Ricky/FPGA_project/LookUpTable/LookUpTable_Implmnt/sbt/outputs/bitmap/And_Gate_Project_bitmap.bin"/>
+							file="/home/Ricky/FPGA-Projects/Go-Board-FPGA-Projects/FlipFlop/FlipFlop_Implmnt/sbt/outputs/bitmap/Clocked_Logic_Intro_bitmap.bin"/>
 					</LocalChainList>
 					<Option>
 						<SVFVendor>JTAG STANDARD</SVFVendor>
-						<SVFProcessor>SVF Processor</SVFProcessor>
 					</Option>
 				</Device>
 			</FPGADevice>
