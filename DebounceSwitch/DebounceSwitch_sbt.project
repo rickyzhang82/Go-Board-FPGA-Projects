@@ -32,7 +32,7 @@ Version=Lattice Semiconductor Corporation iCEcube - Release: 2017.08.27940 - Bui
 ProjectName=DebounceSwitch
 Vendor=SiliconBlue
 Synthesis=synplify
-ProjectVFiles=DebounceSwitch.vhd,FlipFlop.vhd
+ProjectVFiles=FlipFlop.vhd=work,../Common/DebounceSwitch.vhd
 ProjectCFiles=Go_Board_Clock_Constraint.sdc
 CurImplementation=DebounceSwitch_Implmnt
 Implementations=DebounceSwitch_Implmnt

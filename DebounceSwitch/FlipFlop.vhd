@@ -16,7 +16,7 @@ architecture RTL of Debounce_Project_Top is
     
     signal r_LED_1      : std_logic := '1';
     signal r_Switch_1   : std_logic := '0';
-    signal w_switch_1   : std_logic;
+    signal w_Switch_1   : std_logic;
 
 begin
 

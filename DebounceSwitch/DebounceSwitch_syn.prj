@@ -2,8 +2,8 @@
 #-- Project file /home/Ricky/FPGA-Projects/Go-Board-FPGA-Projects/DebounceSwitch/DebounceSwitch_syn.prj
 #project files
 
-add_file -vhdl -lib work "DebounceSwitch.vhd" 
 add_file -vhdl -lib work "FlipFlop.vhd" 
+add_file -vhdl -lib work "../Common/DebounceSwitch.vhd" 
 add_file -constraint -lib work "Go_Board_Clock_Constraint.sdc"
 #implementation: "DebounceSwitch_Implmnt"
 impl -add DebounceSwitch_Implmnt -type fpga
