@@ -1,7 +1,8 @@
 -- Time Game
--- 1. Press switch 1 to start count down from 60 seconds.
--- 2. Press switch 2 when you feel count down to 0.
--- 3. Show the end result of the count down. If it has passed 0, show the letter 'E'
+-- 1. Press switch 1 to start count down from 10 seconds.
+-- 2. Close your eyes. Press switch 2 when you feel count down to 0.
+-- 3. Show the end result of the count down. If it has passed 0, light up LED 1
+-- 4. The one with the lowest seconds win the game.
 library ieee;
 use ieee.std_logic_1164.all;
 use ieee.numeric_std.all;
@@ -9,8 +10,13 @@ use ieee.numeric_std.all;
 entity Segment_Display is
     port (
         i_Clk         : in  std_logic;
+        -- count down start button
         i_Switch_1    : in  std_logic;
-         -- Segment2 is lower digit, Segment1 is upper digit
+        -- count down stop button
+        i_Switch_2    : in  std_logic;
+        -- show error
+        o_LED_1       : out std_logic; 
+        -- Segment2 is lower digit, Segment1 is upper digit
         o_Segment1_A  : out std_logic;
         o_Segment1_B  : out std_logic;
         o_Segment1_C  : out std_logic;
@@ -30,13 +36,18 @@ end entity Segment_Display;
 
 architecture RTL of Segment_Display is
 
-    constant    c_COUNT_LIMIT    : integer := 60;
+    constant    c_COUNT_LIMIT    : integer := 10;
     constant    c_DECIMIAL_LIMIT : integer := 2;
     constant    c_INPUT_WIDTH    : integer := 6;
     constant    c_BCD_WIDTH      : integer := 8;
+    constant    c_CLOCK_CYCLE    : integer := 25000000;
     signal      r_Switch_1       : std_logic := '0';
+    signal      r_Switch_2       : std_logic := '0';
+    signal      r_Count          : integer range 0 to c_COUNT_LIMIT := c_COUNT_LIMIT;
+    signal      r_Sec_Ticks      : integer range 0 to c_CLOCK_CYCLE-1 := 0;
+    signal      r_Count_Down     : std_logic := '0';
     signal      w_Switch_1       : std_logic;
-    signal      r_Count          : integer range 1 to c_COUNT_LIMIT := 1;
+    signal      w_Switch_2       : std_logic;
     signal      w_Count_BCD      : std_logic_vector(c_BCD_WIDTH - 1 downto 0) := (others => '0');
     signal      w_BCD_Done       : std_logic;
     signal      w_Segment1_A     : std_logic; 
@@ -58,11 +69,19 @@ architecture RTL of Segment_Display is
 begin
     
     -- call debounce switch logic for input i_Switch_1
-    Debounce_Inst : entity work.Debounce_Switch
+    Debounce_S1_Inst : entity work.Debounce_Switch
         port map (
             i_Clk       => i_Clk,
             i_Switch    => i_Switch_1,
             o_Switch    => w_Switch_1
+        );
+ 
+    -- call debounce switch logic for input i_Switch_1
+    Debounce_S2_Inst : entity work.Debounce_Switch
+        port map (
+            i_Clk       => i_Clk,
+            i_Switch    => i_Switch_2,
+            o_Switch    => w_Switch_2
         );
     
     -- Convert r_Count from binary to BCD
@@ -112,17 +131,37 @@ begin
         if rising_edge(i_Clk) then
             
             r_Switch_1 <= w_Switch_1;
+            r_Switch_2 <= w_Switch_2;
 
-            -- if the switch is on the falling edge
+            -- if the switch 1 is on the falling edge
+            -- start count down
             if r_Switch_1 = '0' and w_Switch_1 = '1' then
+                o_LED_1 <= '0';
+                r_Count_Down <= '1';
+                r_Sec_Ticks <= 0;
+                r_Count <= c_COUNT_LIMIT;
+            end if;
 
-                -- increase internal r_Count
-                if r_Count = c_COUNT_LIMIT then
-                    r_Count <= 1;
+            -- if the switch 2 is on the falling edge
+            -- stop count down
+            if r_Switch_2 = '0' and w_Switch_2 = '1' then
+                r_Count_Down <= '0';
+            end if;
+
+            if r_Count_Down = '1' then
+                if r_Sec_Ticks = c_CLOCK_CYCLE - 1 then
+                    r_Sec_Ticks <= 0;
+                    r_Count <= r_Count - 1;
                 else
-                    r_Count <= r_Count + 1;
+                    r_Sec_Ticks <= r_Sec_Ticks + 1;
                 end if;
-                
+
+                if r_Count = 0 then
+                    -- show error
+                    o_LED_1 <= '1';
+                    -- stop count down
+                    r_Count_Down <= '0';
+                end if;
             end if;
 
             if w_BCD_Done = '1' then
