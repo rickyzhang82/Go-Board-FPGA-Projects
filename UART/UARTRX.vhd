@@ -27,12 +27,22 @@ entity UART_RX is
     );
 end entity UART_RX;
 
-architecture rtl of UARTRX is
+architecture rtl of UAR_TRX is
     
-    type t_UART_State is (s_Idle, );
+    type t_UART_STATE is (s_IDLE, s_START_BIT, s_DATA_BIT, s_STOP_BIT, s_ERR);
+    -- register for UART state machine
+    signal r_State : t_UART_STATE := s_IDLE;
+
 
 begin
     
-    
+   p_RX: process(i_Clk)
+   begin
+
+       if  rising_edge(clk) then
+           
+       end if;
+
+   end process p_RX;
     
 end architecture rtl;
