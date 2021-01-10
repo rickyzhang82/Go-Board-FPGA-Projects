@@ -23,31 +23,37 @@ entity UART_RX is
         g_START_BIT     : std_logic                     := '0';
         -- stop bit indicator
         g_STOP_BIT      : std_logic                     := '1';
-        -- number of bits to receive
-        g_NUM_BITS      : integer                       := 8
+        -- number of data bits to receive
+        g_NUM_DATA_BITS : integer                       := 8
     );
     port (
+        -- clock signal
         i_Clk           : in  std_logic;
+        -- input RX serial signal
         i_RX_Serial     : in  std_logic;
+        -- one clock cycle wide data valid signal
         o_RX_DV         : out std_logic;
+        -- 8 bit output signal
         o_RX_Byte       : out std_logic_vector(7 downto 0)
     );
 end entity UART_RX;
 
-architecture rtl of UAR_TRX is
+architecture rtl of UART_RX is
     
     -- state type of state machine
     type t_UART_STATE is (s_IDLE, s_START_BIT, s_DATA_BIT, s_STOP_BIT, s_CLEANUP);
     -- register for UART state machine
     signal r_State              : t_UART_STATE                              := s_IDLE;
     -- register for clock counter
-    signal r_Clock_Count        : unsigned range 0 to g_CLKS_PER_BIT-1      := 0;
+    signal r_Clock_Count        : integer range 0 to g_CLKS_PER_BIT-1       := 0;
     -- register for bit index
-    signal r_Bit_Index          : unsigned range 0 to g_NUM_BITS-1          := 0;
+    signal r_Bit_Index          : integer range 0 to g_NUM_DATA_BITS-1           := 0;
     -- register for received byte
-    signal r_RX_Byte            : std_logic_vector(g_NUM_BITS-1 downto 0)   := (others => '0');
+    signal r_RX_Byte            : std_logic_vector(g_NUM_DATA_BITS-1 downto 0)   := (others => '0');
     -- register for receive readiness
     signal r_RX_DV              : std_logic                                 := '0';
+    -- for simulation purpose to display internal state
+    signal w_State              : std_logic_vector(2 downto 0);
 
 begin
     
@@ -61,9 +67,11 @@ begin
 
                 -- idel state
                 when s_IDLE =>
+                    -- reset registers
                     r_RX_DV <= '0';
                     r_Clock_Count <= 0;
                     r_Bit_Index <= 0;
+                    -- detect start bit
                     if i_RX_Serial = g_START_BIT then
                         -- found start bit
                         r_State <= s_START_BIT;
@@ -78,7 +86,7 @@ begin
                     if r_Clock_Count = g_CLKS_PER_BIT / 2 then
                         -- reset clock count
                         r_Clock_Count <= 0;
-                        if i_RX_Serial = 0 then
+                        if i_RX_Serial = g_START_BIT then
                             r_State <= s_DATA_BIT;
                         else
                             -- invalid start bit
@@ -91,12 +99,12 @@ begin
                     r_Clock_Count <= r_Clock_Count + 1;
                     -- reach the middle 
                     if r_Clock_Count = g_CLKS_PER_BIT then
-                        r_Bx_Byte[r_Bit_Index] <= i_RX_Serial;
+                        r_RX_Byte(r_Bit_Index) <= i_RX_Serial;
                         r_Clock_Count <= 0;
                         r_Bit_Index <= r_Bit_Index + 1;
                     end if;
                     -- all 8 data bit has sampled
-                    if r_Bit_Index = g_NUM_BITS then
+                    if r_Bit_Index = g_NUM_DATA_BITS then
                         r_State <= s_STOP_BIT;
                     end if;
 
@@ -105,7 +113,7 @@ begin
                     -- reach the middle 
                     if r_Clock_Count = g_CLKS_PER_BIT then
                         if i_RX_Serial = g_STOP_BIT then
-                            r_RX_DV <= 1;
+                            r_RX_DV <= '1';
                             r_Clock_Count <= 0;
                             r_State <= s_CLEANUP;
                         else
@@ -115,7 +123,11 @@ begin
                 
                 -- stay here for one clock cycle
                 when s_CLEANUP =>
-                    r_RX_DV <= 0;
+                    -- reset data valid signal after one clock cycle
+                    r_RX_DV <= '0';
+                    r_State <= s_IDLE;
+                
+                when others =>
                     r_State <= s_IDLE;
 
             end case;
@@ -126,5 +138,14 @@ begin
 -- assign the registers to the output
 o_RX_Byte <= r_RX_Byte;
 o_RX_DV <= r_RX_DV;
+
+-- for simulation purpose
+-- Create a signal for simulation purposes (allows waveform display)
+w_State <= "000" when r_State = s_Idle else
+           "001" when r_State = s_START_BIT else
+           "010" when r_State = s_DATA_BIT else
+           "011" when r_State = s_STOP_BIT else
+           "100" when r_State = s_CLEANUP else
+           "101"; -- should never get here
 
 end architecture rtl;
