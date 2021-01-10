@@ -1,3 +1,4 @@
+--
 -- This file contains the UART Receiver.  This receiver is able to
 -- receive 8 bits of serial data, one start bit, one stop bit,
 -- and no parity bit.  When receive is complete o_rx_dv will be
@@ -23,7 +24,7 @@ entity UART_RX is
         -- stop bit indicator
         g_STOP_BIT      : std_logic                     := '1';
         -- number of bits to receive
-        g_NUM_BITS      : integer                       := 8;
+        g_NUM_BITS      : integer                       := 8
     );
     port (
         i_Clk           : in  std_logic;
@@ -53,7 +54,7 @@ begin
    p_RX: process(i_Clk)
    begin
 
-       if  rising_edge(clk) then
+       if  rising_edge(i_Clk) then
 
             -- in idle state
             case r_State is
@@ -69,7 +70,7 @@ begin
                     else
                         -- reset
                         r_State <= s_IDLE;
-                    end
+                    end if;
             
                 -- check the middle of start bit and make sure it is still low
                 when s_START_BIT =>
@@ -82,8 +83,8 @@ begin
                         else
                             -- invalid start bit
                             r_State <= s_IDLE;
-                        end if
-                    end if
+                        end if;
+                    end if;
                
                 -- sample data bit in the middle
                 when s_DATA_BIT =>
@@ -93,11 +94,11 @@ begin
                         r_Bx_Byte[r_Bit_Index] <= i_RX_Serial;
                         r_Clock_Count <= 0;
                         r_Bit_Index <= r_Bit_Index + 1;
-                    end if
+                    end if;
                     -- all 8 data bit has sampled
                     if r_Bit_Index = g_NUM_BITS then
                         r_State <= s_STOP_BIT;
-                    end if
+                    end if;
 
                 when s_STOP_BIT =>
                     r_Clock_Count <= r_Clock_Count + 1;
@@ -109,8 +110,8 @@ begin
                             r_State <= s_CLEANUP;
                         else
                             r_State <= s_IDLE;
-                        end if
-                    end if
+                        end if;
+                    end if;
                 
                 -- stay here for one clock cycle
                 when s_CLEANUP =>
@@ -118,7 +119,7 @@ begin
                     r_State <= s_IDLE;
 
             end case;
-       end if;
+       end if; -- end if rising_eduge(i_Clk)
 
    end process p_RX;
 
