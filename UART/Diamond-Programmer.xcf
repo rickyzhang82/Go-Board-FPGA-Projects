@@ -17,12 +17,13 @@
 				<BScanLen>1</BScanLen>
 				<BScanVal>0</BScanVal>
 			</Bypass>
-			<File>/home/Ricky/FPGA_project/SwitchLED/SwitchLED_Implmnt/sbt/outputs/bitmap/Switches_To_LEDs_bitmap.bin</File>
-			<FileTime>12/22/20 15:33:44</FileTime>
-			<JedecChecksum>0xAD54</JedecChecksum>
+			<File>/home/Ricky/FPGA-Projects/Go-Board-FPGA-Projects/UART/UART_Implmnt/sbt/outputs/bitmap/UART_RX_bitmap.bin</File>
+			<FileTime>01/10/21 20:48:14</FileTime>
+			<JedecChecksum>0x0250</JedecChecksum>
 			<Operation>SPI Flash Erase,Program,Verify</Operation>
 			<Option>
 				<SVFVendor>JTAG STANDARD</SVFVendor>
+				<SVFProcessor>SVF Processor</SVFProcessor>
 				<AccessMode>SPI Flash Programming</AccessMode>
 			</Option>
 			<FPGALoader>
@@ -46,6 +47,7 @@
 						<SVFVendor>JTAG STANDARD</SVFVendor>
 						<IOState>HighZ</IOState>
 						<IOVectorData>`‹E</IOVectorData>
+						<SVFProcessor>SVF Processor</SVFProcessor>
 						<AccessMode>JTAG</AccessMode>
 					</Option>
 				</Device>
@@ -59,7 +61,7 @@
 					<IDCode>0x10</IDCode>
 					<Package>8-pin SOIC</Package>
 					<Operation>SPI Flash Erase,Program,Verify</Operation>
-					<File>/home/Ricky/FPGA_project/SwitchLED/SwitchLED_Implmnt/sbt/outputs/bitmap/Switches_To_LEDs_bitmap.bin</File>
+					<File>/home/Ricky/FPGA-Projects/Go-Board-FPGA-Projects/UART/UART_Implmnt/sbt/outputs/bitmap/UART_RX_bitmap.bin</File>
 					<AddressBase>0x00000000</AddressBase>
 					<EndAddress>0x00008000</EndAddress>
 					<DeviceSize>1</DeviceSize>
@@ -80,6 +82,7 @@
 					</LocalChainList>
 					<Option>
 						<SVFVendor>JTAG STANDARD</SVFVendor>
+						<SVFProcessor>SVF Processor</SVFProcessor>
 					</Option>
 				</Device>
 			</FPGADevice>
