@@ -1,9 +1,6 @@
 [libraries]
-libcommon.files = [
-  'Common/*.vhd',
-]
-
 libsrc.files = [
+  'Common/*.vhd',
   '**/src/*.vhd',
   '**/test/*.vhd',
 ]
