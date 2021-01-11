@@ -10,25 +10,25 @@ z2
 cModel Technology
 d/home/Ricky/FPGA-Projects/ModelSim
 Euart_rx
-Z0 w1610319466
+Z0 w1610339921
 Z1 DPx4 ieee 11 numeric_std 0 22 aU^R8eGcicLcUFIaBQSL>3
 Z2 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
 Z3 DPx4 ieee 14 std_logic_1164 0 22 cVAk:aDinOX8^VGI1ekP<3
-!i122 0
+!i122 2
 Z4 d/home/Ricky/FPGA-Projects/Go-Board-FPGA-Projects/UART/modelsim
-Z5 8/home/Ricky/FPGA-Projects/Go-Board-FPGA-Projects/UART/UARTRX.vhd
-Z6 F/home/Ricky/FPGA-Projects/Go-Board-FPGA-Projects/UART/UARTRX.vhd
+Z5 8/home/Ricky/FPGA-Projects/Go-Board-FPGA-Projects/UART/src/UART_RX.vhd
+Z6 F/home/Ricky/FPGA-Projects/Go-Board-FPGA-Projects/UART/src/UART_RX.vhd
 l0
 L17 1
-VBi`oi[;YAkN9W2gZDgME13
-!s100 YaC1RY3`LB]7SoWdUAgVF1
+V<ZX<2=4cW7fVn4;jAQK^Q3
+!s100 WoEh7`]Ne_9nZ;nb8@jJm1
 Z7 OV;C;2020.1;71
 32
-Z8 !s110 1610326940
+Z8 !s110 1610340254
 !i10b 1
-Z9 !s108 1610326940.000000
-Z10 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|/home/Ricky/FPGA-Projects/Go-Board-FPGA-Projects/UART/UARTRX.vhd|
-Z11 !s107 /home/Ricky/FPGA-Projects/Go-Board-FPGA-Projects/UART/UARTRX.vhd|
+Z9 !s108 1610340254.000000
+Z10 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|/home/Ricky/FPGA-Projects/Go-Board-FPGA-Projects/UART/src/UART_RX.vhd|
+Z11 !s107 /home/Ricky/FPGA-Projects/Go-Board-FPGA-Projects/UART/src/UART_RX.vhd|
 !i113 1
 Z12 o-work work -2002 -explicit
 Z13 tExplicit 1 CvgOpt 0
@@ -36,8 +36,8 @@ Artl
 R1
 R2
 R3
-Z14 DEx4 work 7 uart_rx 0 22 Bi`oi[;YAkN9W2gZDgME13
-!i122 0
+Z14 DEx4 work 7 uart_rx 0 22 <ZX<2=4cW7fVn4;jAQK^Q3
+!i122 2
 l58
 L41 116
 VIVMM172EClOVMBVVXY1b<1
@@ -57,10 +57,10 @@ Z15 w1610322151
 R1
 R2
 R3
-!i122 1
+!i122 3
 R4
-Z16 8/home/Ricky/FPGA-Projects/Go-Board-FPGA-Projects/UART/test/UARTRX_testbench.vhd
-Z17 F/home/Ricky/FPGA-Projects/Go-Board-FPGA-Projects/UART/test/UARTRX_testbench.vhd
+Z16 8/home/Ricky/FPGA-Projects/Go-Board-FPGA-Projects/UART/test/UART_RX_TB.vhd
+Z17 F/home/Ricky/FPGA-Projects/Go-Board-FPGA-Projects/UART/test/UART_RX_TB.vhd
 l0
 L8 1
 Vo=k=>UlzB1SjRYjl@Eg^R0
@@ -70,8 +70,8 @@ R7
 R8
 !i10b 1
 R9
-Z18 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|/home/Ricky/FPGA-Projects/Go-Board-FPGA-Projects/UART/test/UARTRX_testbench.vhd|
-!s107 /home/Ricky/FPGA-Projects/Go-Board-FPGA-Projects/UART/test/UARTRX_testbench.vhd|
+Z18 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|/home/Ricky/FPGA-Projects/Go-Board-FPGA-Projects/UART/test/UART_RX_TB.vhd|
+!s107 /home/Ricky/FPGA-Projects/Go-Board-FPGA-Projects/UART/test/UART_RX_TB.vhd|
 !i113 1
 R12
 R13
@@ -80,19 +80,19 @@ R14
 R1
 R2
 R3
-DEx4 work 10 uart_rx_tb 0 22 o=k=>UlzB1SjRYjl@Eg^R0
-!i122 1
+Z19 DEx4 work 10 uart_rx_tb 0 22 o=k=>UlzB1SjRYjl@Eg^R0
+!i122 3
 l51
-L11 76
-Vn_`CI[l8cQi]?;__2Z8QM0
-!s100 V_b0]5n5WJZ2a0aa4DSY=1
+Z20 L11 76
+Z21 Vn_`CI[l8cQi]?;__2Z8QM0
+Z22 !s100 V_b0]5n5WJZ2a0aa4DSY=1
 R7
 32
 R8
 !i10b 1
 R9
 R18
-Z19 !s107 /home/Ricky/FPGA-Projects/Go-Board-FPGA-Projects/UART/test/UARTRX_testbench.vhd|
+Z23 !s107 /home/Ricky/FPGA-Projects/Go-Board-FPGA-Projects/UART/test/UART_RX_TB.vhd|
 !i113 1
 R12
 R13

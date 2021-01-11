@@ -34,7 +34,7 @@ entity UART_RX is
         -- one clock cycle wide data valid signal
         o_RX_DV         : out std_logic;
         -- 8 bit output signal
-        o_RX_Byte       : out std_logic_vector(7 downto 0)
+        o_RX_Byte       : out std_logic_vector(g_NUM_DATA_BITS-1 downto 0)
     );
 end entity UART_RX;
 
