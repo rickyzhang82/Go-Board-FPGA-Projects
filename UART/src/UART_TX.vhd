@@ -31,9 +31,13 @@ entity UART_TX is
         i_Clk           : in  std_logic;
         -- input TX byte signal
         i_TX_Byte       : in  std_logic_vector(g_NUM_DATA_BITS-1 downto 0);
-        -- one clock cycle wide data valid signal
-        o_TX_DV         : out std_logic;
+        -- one clock cycle wide sent data active signal
+        o_TX_Active     : out std_logic;
+        -- one clock cycle wide sent data done signal
+        o_TX_Done       : out std_logic;
         -- output serial signal
         o_TX_Serial     : out std_logic
     );
 end entity UART_TX;
+
+-- TODO add arch
