@@ -1,0 +1,82 @@
+# Loading project UART
+# Compile of UARTRX.vhd was successful.
+# Compile of UARTRX_testbench.vhd was successful.
+# 2 compiles, 0 failed with no errors.
+vsim work.uart_rx_tb
+# vsim work.uart_rx_tb 
+# Start time: 20:02:43 on Jan 10,2021
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading work.uart_rx_tb(behave)
+# Loading work.uart_rx(rtl)
+run -all
+# ** Failure: Test Passed!
+#    Time: 86860 ns  Iteration: 0  Process: /uart_rx_tb/test_bench File: /home/Ricky/FPGA-Projects/Go-Board-FPGA-Projects/UART/test/UARTRX_testbench.vhd
+# Break in Process test_bench at /home/Ricky/FPGA-Projects/Go-Board-FPGA-Projects/UART/test/UARTRX_testbench.vhd line 82
+add wave -position insertpoint  \
+sim:/uart_rx_tb/UART_RX_INST/w_State
+add wave -position insertpoint sim:/uart_rx_tb/*
+run -all
+# ** Failure: Test Passed!
+#    Time: 173740 ns  Iteration: 0  Process: /uart_rx_tb/test_bench File: /home/Ricky/FPGA-Projects/Go-Board-FPGA-Projects/UART/test/UARTRX_testbench.vhd
+# Break in Process test_bench at /home/Ricky/FPGA-Projects/Go-Board-FPGA-Projects/UART/test/UARTRX_testbench.vhd line 82
+quit
+vsim -help
+# Model Technology ModelSim - INTEL FPGA STARTER EDITION vsim 2020.1 Simulator 2020.02 Feb 28 2020
+#     The vsim tool provides HDL simulation based on the compiled and optimized
+#     design and it provides various post-simulation analysis capabilities. In
+#     simulation mode it expects to be provided with the optimization output for
+#     the root of the design, or it will automatically produce such an
+#     optimization from the root of the design.
+#     
+#     Try the following to get help on specific options or categories: 
+# 
+#     vsim -help all            : List all categories and options
+#     vsim -help category       : List all categories
+#     vsim -help <option>       : Help on an option
+#     vsim -help <command-line> : Help on all options in a command-line
+#     vsim -help <category>     : List all options in a category
+# 
+#     Category:       The list of categories in vsim tool.
+# 
+#     General         List most common general options
+#     Coverage        List options for Coverage
+#     Cpp             List options supporting SystemC module
+#     Debug           List options for debug, and assertion
+#     GLS             List options for Gate Level Simulation
+#     Language        List all options supported by hardware language Verilog/VHDL
+#     Library         List options for design, work library
+#     License         List options helping for license issues
+#     Messages        List all warn, error, note, fatal messages options
+#     MultiCore       List options supporting for Multicore (MC2)
+#     PA              List most common options supporting for Power Aware
+#     Pdu             List options for Preoptimized Design Unit.
+#     Report          List options for reporting log file, statistics, capstats
+#     Solver          List options supporting for Solver
+#     Visualizer      List options supporting for visualizer
+quit -sim
+# End time: 20:05:19 on Jan 10,2021, Elapsed time: 0:02:36
+# Errors: 2, Warnings: 9
+vsim work.uart_rx_tb
+# vsim work.uart_rx_tb 
+# Start time: 20:05:25 on Jan 10,2021
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading work.uart_rx_tb(behave)
+# Loading work.uart_rx(rtl)
+add wave -position insertpoint sim:/uart_rx_tb/*
+add wave -position insertpoint  \
+sim:/uart_rx_tb/UART_RX_INST/w_State
+run -all
+# ** Failure: Test Passed!
+#    Time: 86860 ns  Iteration: 0  Process: /uart_rx_tb/test_bench File: /home/Ricky/FPGA-Projects/Go-Board-FPGA-Projects/UART/test/UARTRX_testbench.vhd
+# Break in Process test_bench at /home/Ricky/FPGA-Projects/Go-Board-FPGA-Projects/UART/test/UARTRX_testbench.vhd line 82
+write format wave -window .main_pane.wave.interior.cs.body.pw.wf /home/Ricky/FPGA-Projects/Go-Board-FPGA-Projects/UART/modelsim/wave.do
+quit -sim
+# End time: 20:09:16 on Jan 10,2021, Elapsed time: 0:03:51
+# Errors: 1, Warnings: 1
+quit
