@@ -1,0 +1,9 @@
+[libraries]
+libcommon.files = [
+  'Common/*.vhd',
+]
+
+libsrc.files = [
+  '**/src/*.vhd',
+  '**/test/*.vhd',
+]
