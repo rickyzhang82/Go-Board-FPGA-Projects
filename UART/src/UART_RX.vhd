@@ -62,7 +62,6 @@ begin
 
        if  rising_edge(i_Clk) then
 
-            -- in idle state
             case r_State is
 
                 -- idel state
