@@ -99,7 +99,7 @@ begin
                     if r_Clock_Count = g_CLKS_PER_BIT-1 then
                         r_Clock_Count <= 0;
                         if r_Bit_Index = g_NUM_DATA_BITS-1 then
-                            r_State <= s_START_BIT;
+                            r_State <= s_STOP_BIT;
                         else
                             r_Bit_Index <= r_Bit_Index + 1;
                         end if;
@@ -109,7 +109,7 @@ begin
                 
                 when s_STOP_BIT =>
                     r_TX_Serial <= g_STOP_BIT;
-                    if r_Clock_Count = g_STOP_BIT-1 then
+                    if r_Clock_Count = g_CLKS_PER_BIT-1 then
                         r_Clock_Count <= 0;
                         r_State <= s_CLEANUP;
                     else
