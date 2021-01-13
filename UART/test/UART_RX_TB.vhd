@@ -1,5 +1,5 @@
 --
--- Test Bench for UARTRX.vhd
+-- Test Bench for UART_RX.vhd
 --
 library IEEE;
   use IEEE.std_logic_1164.all;
@@ -11,11 +11,11 @@ end entity UART_RX_TB;
 architecture Behave of UART_RX_TB is
 
     -- Test Bench at 25 Mhz clock
-    constant c_CLK_PERIOD       : time              :=  40 ns;
+    constant c_CLK_PERIOD       : time                          :=  40 ns;
     -- 25 Mhz / 115200 Baud = 217 clock per bit
-    constant c_CLKS_PER_BIT     : integer           := 217;
+    constant c_CLKS_PER_BIT     : integer                       := 217;
     -- 1 / 115200 Baud = 8680 ns
-    constant c_BIT_PERIOD       : time              := 8680 ns;
+    constant c_BIT_PERIOD       : time                          := 8680 ns;
 
     -- simulated clock
     signal r_Clock              : std_logic                     := '0';
