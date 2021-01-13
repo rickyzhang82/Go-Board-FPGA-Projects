@@ -1,0 +1,198 @@
+# Loading project UART_TX
+# Compile of UART_TX.vhd failed with 3 errors.
+# Compile of UART_TX_TB.vhd failed with 5 errors.
+# 2 compiles, 2 failed with 8 errors.
+# Compile of UART_TX.vhd was successful.
+# Compile of UART_TX_TB.vhd failed with 5 errors.
+# 2 compiles, 1 failed with 5 errors.
+# Compile of UART_TX.vhd was successful.
+# Compile of UART_TX_TB.vhd failed with 2 errors.
+# 2 compiles, 1 failed with 2 errors.
+# Compile of UART_TX.vhd was successful.
+# Compile of UART_TX_TB.vhd was successful.
+# 2 compiles, 0 failed with no errors.
+vsim work.uart_tx_tb
+# vsim work.uart_tx_tb 
+# Start time: 22:41:41 on Jan 12,2021
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading work.uart_tx_tb(rtl)
+# Loading work.uart_tx(rtl)
+add wave -position insertpoint sim:/uart_tx_tb/*
+add wave -position insertpoint  \
+sim:/uart_tx_tb/UART_TX_INST/w_State
+run --all
+# Unknown option: -all
+# ** UI-Msg: (vsim-4005) Invalid argument '--all'.
+# Usage: run [<timesteps> [<time_units>]] | -all | -continue | -next | -step | -over | -out | -init | -final
+run -all
+# ** Failure: Test Failed -- Incorrect TX Active. Expect 1.
+#    Time: 60 ns  Iteration: 0  Process: /uart_tx_tb/test_bench File: /home/Ricky/FPGA-Projects/Go-Board-FPGA-Projects/UART/test/UART_TX_TB.vhd
+# Break in Process test_bench at /home/Ricky/FPGA-Projects/Go-Board-FPGA-Projects/UART/test/UART_TX_TB.vhd line 66
+quit -sim
+# End time: 22:45:37 on Jan 12,2021, Elapsed time: 0:03:56
+# Errors: 1, Warnings: 10
+# Load canceled
+vsim work.uart_tx_tb
+# vsim work.uart_tx_tb 
+# Start time: 22:45:49 on Jan 12,2021
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading work.uart_tx_tb(rtl)
+# Loading work.uart_tx(rtl)
+add wave -position insertpoint sim:/uart_tx_tb/*
+add wave -position insertpoint  \
+sim:/uart_tx_tb/UART_TX_INST/w_State
+run -all
+# ** Failure: Test Failed -- Incorrect TX Active. Expect 1.
+#    Time: 60 ns  Iteration: 0  Process: /uart_tx_tb/test_bench File: /home/Ricky/FPGA-Projects/Go-Board-FPGA-Projects/UART/test/UART_TX_TB.vhd
+# Break in Process test_bench at /home/Ricky/FPGA-Projects/Go-Board-FPGA-Projects/UART/test/UART_TX_TB.vhd line 66
+quit -sim
+# End time: 22:48:32 on Jan 12,2021, Elapsed time: 0:02:43
+# Errors: 1, Warnings: 1
+# Compile of UART_TX.vhd was successful.
+# Compile of UART_TX_TB.vhd was successful.
+# 2 compiles, 0 failed with no errors.
+vsim work.uart_tx_tb
+# vsim work.uart_tx_tb 
+# Start time: 22:48:49 on Jan 12,2021
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading work.uart_tx_tb(rtl)
+# Loading work.uart_tx(rtl)
+add wave -position insertpoint sim:/uart_tx_tb/*
+add wave -position insertpoint  \
+sim:/uart_tx_tb/UART_TX_INST/w_State
+run -all
+# ** Failure: Test Failed -- Incorrect TX Active. Expect 1.
+#    Time: 100 ns  Iteration: 0  Process: /uart_tx_tb/test_bench File: /home/Ricky/FPGA-Projects/Go-Board-FPGA-Projects/UART/test/UART_TX_TB.vhd
+# Break in Process test_bench at /home/Ricky/FPGA-Projects/Go-Board-FPGA-Projects/UART/test/UART_TX_TB.vhd line 67
+quit -sim
+# End time: 22:52:20 on Jan 12,2021, Elapsed time: 0:03:31
+# Errors: 1, Warnings: 2
+# Compile of UART_TX.vhd was successful.
+# Compile of UART_TX_TB.vhd was successful.
+# 2 compiles, 0 failed with no errors.
+vsim work.uart_tx_tb
+# vsim work.uart_tx_tb 
+# Start time: 22:54:10 on Jan 12,2021
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading work.uart_tx_tb(rtl)
+# Loading work.uart_tx(rtl)
+add wave -position insertpoint sim:/uart_tx_tb/*
+add wave -position insertpoint  \
+sim:/uart_tx_tb/UART_TX_INST/w_State
+run -all
+quit -sim
+# End time: 22:56:03 on Jan 12,2021, Elapsed time: 0:01:53
+# Errors: 0, Warnings: 2
+# Compile of UART_TX.vhd was successful.
+# Compile of UART_TX_TB.vhd was successful.
+# 2 compiles, 0 failed with no errors.
+vsim work.uart_tx_tb
+# vsim work.uart_tx_tb 
+# Start time: 22:57:03 on Jan 12,2021
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading work.uart_tx_tb(rtl)
+# Loading work.uart_tx(rtl)
+add wave -position insertpoint sim:/uart_tx_tb/*
+add wave -position insertpoint  \
+sim:/uart_tx_tb/UART_TX_INST/w_State
+run -all
+quit -sim
+# End time: 23:04:04 on Jan 12,2021, Elapsed time: 0:07:01
+# Errors: 0, Warnings: 2
+vsim work.uart_tx_tb
+# vsim work.uart_tx_tb 
+# Start time: 23:06:31 on Jan 12,2021
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading work.uart_tx_tb(rtl)
+# Loading work.uart_tx(rtl)
+add wave -position insertpoint  \
+sim:/uart_tx_tb/UART_TX_INST/w_State
+add wave -position insertpoint sim:/uart_tx_tb/*
+run 104160ns
+quit -sim
+# End time: 23:16:18 on Jan 12,2021, Elapsed time: 0:09:47
+# Errors: 0, Warnings: 1
+# Compile of UART_TX.vhd was successful.
+# Compile of UART_TX_TB.vhd was successful.
+# 2 compiles, 0 failed with no errors.
+vsim work.uart_tx_tb
+# vsim work.uart_tx_tb 
+# Start time: 23:16:34 on Jan 12,2021
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading work.uart_tx_tb(rtl)
+# Loading work.uart_tx(rtl)
+add wave -position insertpoint sim:/uart_tx_tb/*
+add wave -position insertpoint  \
+sim:/uart_tx_tb/UART_TX_INST/w_State
+run 104160ns
+# ** Failure: Test Passed!
+#    Time: 86900 ns  Iteration: 2  Process: /uart_tx_tb/test_bench File: /home/Ricky/FPGA-Projects/Go-Board-FPGA-Projects/UART/test/UART_TX_TB.vhd
+# Break in Process test_bench at /home/Ricky/FPGA-Projects/Go-Board-FPGA-Projects/UART/test/UART_TX_TB.vhd line 75
+quit -sim
+# End time: 23:18:50 on Jan 12,2021, Elapsed time: 0:02:16
+# Errors: 1, Warnings: 2
+# Compile of UART_TX.vhd was successful.
+# Compile of UART_TX_TB.vhd failed with 3 errors.
+# 2 compiles, 1 failed with 3 errors.
+vsim work.uart_tx_tb
+# vsim work.uart_tx_tb 
+# Start time: 23:30:00 on Jan 12,2021
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading work.uart_tx_tb(rtl)
+# Loading work.uart_tx(rtl)
+quit -sim
+# End time: 23:30:07 on Jan 12,2021, Elapsed time: 0:00:07
+# Errors: 0, Warnings: 2
+# Compile of UART_TX.vhd was successful.
+# Compile of UART_TX_TB.vhd failed with 3 errors.
+# 2 compiles, 1 failed with 3 errors.
+# Compile of UART_TX.vhd was successful.
+# Compile of UART_TX_TB.vhd failed with 2 errors.
+# 2 compiles, 1 failed with 2 errors.
+# Compile of UART_TX.vhd was successful.
+# Compile of UART_TX_TB.vhd was successful.
+# 2 compiles, 0 failed with no errors.
+vsim work.uart_tx_tb
+# vsim work.uart_tx_tb 
+# Start time: 23:34:20 on Jan 12,2021
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading work.uart_tx_tb(rtl)
+# Loading work.uart_tx(rtl)
+add wave -position insertpoint  \
+sim:/uart_tx_tb/UART_TX_INST/w_State
+add wave -position insertpoint sim:/uart_tx_tb/*
+run -all
+# ** Failure: Test Passed!
+#    Time: 95580 ns  Iteration: 0  Process: /uart_tx_tb/test_bench File: /home/Ricky/FPGA-Projects/Go-Board-FPGA-Projects/UART/test/UART_TX_TB.vhd
+# Break in Process test_bench at /home/Ricky/FPGA-Projects/Go-Board-FPGA-Projects/UART/test/UART_TX_TB.vhd line 87
+quit -sim
+# End time: 23:36:43 on Jan 12,2021, Elapsed time: 0:02:23
+# Errors: 1, Warnings: 4
+quit

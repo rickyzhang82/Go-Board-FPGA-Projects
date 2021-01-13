@@ -1,0 +1,98 @@
+m255
+K4
+z2
+!s11e MIXED_VERSIONS
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+d/home/Ricky/FPGA-Projects/ModelSim
+Euart_tx
+Z0 w1610511363
+Z1 DPx4 ieee 11 numeric_std 0 22 aU^R8eGcicLcUFIaBQSL>3
+Z2 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
+Z3 DPx4 ieee 14 std_logic_1164 0 22 cVAk:aDinOX8^VGI1ekP<3
+!i122 22
+Z4 d/home/Ricky/FPGA-Projects/Go-Board-FPGA-Projects/UART/modelsim/UART_TX
+Z5 8/home/Ricky/FPGA-Projects/Go-Board-FPGA-Projects/UART/src/UART_TX.vhd
+Z6 F/home/Ricky/FPGA-Projects/Go-Board-FPGA-Projects/UART/src/UART_TX.vhd
+l0
+L17 1
+VVgC;I74Wd@z:l4h1<X<?X3
+!s100 :AMgK=T74Q7R8f1XC7bF?3
+Z7 OV;C;2020.1;71
+32
+Z8 !s110 1610512453
+!i10b 1
+Z9 !s108 1610512453.000000
+Z10 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|/home/Ricky/FPGA-Projects/Go-Board-FPGA-Projects/UART/src/UART_TX.vhd|
+Z11 !s107 /home/Ricky/FPGA-Projects/Go-Board-FPGA-Projects/UART/src/UART_TX.vhd|
+!i113 1
+Z12 o-work work -2002 -explicit
+Z13 tExplicit 1 CvgOpt 0
+Artl
+R1
+R2
+R3
+Z14 DEx4 work 7 uart_tx 0 22 VgC;I74Wd@z:l4h1<X<?X3
+!i122 22
+l66
+L45 102
+V@6E=4W8mkfOQ?VhBoZ^4Z0
+!s100 dbG^DlaQSDIi0PI^Y7n8X1
+R7
+32
+R8
+!i10b 1
+R9
+R10
+R11
+!i113 1
+R12
+R13
+Euart_tx_tb
+Z15 w1610512445
+R1
+R2
+R3
+!i122 23
+R4
+Z16 8/home/Ricky/FPGA-Projects/Go-Board-FPGA-Projects/UART/test/UART_TX_TB.vhd
+Z17 F/home/Ricky/FPGA-Projects/Go-Board-FPGA-Projects/UART/test/UART_TX_TB.vhd
+l0
+L8 1
+V2l0k5eM76ckPo:9RC]W_82
+!s100 ]^fe]S78Tml@AV6I5<Mmj2
+R7
+32
+R8
+!i10b 1
+R9
+Z18 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|/home/Ricky/FPGA-Projects/Go-Board-FPGA-Projects/UART/test/UART_TX_TB.vhd|
+Z19 !s107 /home/Ricky/FPGA-Projects/Go-Board-FPGA-Projects/UART/test/UART_TX_TB.vhd|
+!i113 1
+R12
+R13
+Artl
+R14
+R1
+R2
+R3
+Z20 DEx4 work 10 uart_tx_tb 0 22 2l0k5eM76ckPo:9RC]W_82
+!i122 23
+l33
+L11 81
+VIc[kdN;Heck@EJT^0biLO2
+!s100 fFho;7I6^]mIznHgDIhUc1
+R7
+32
+R8
+!i10b 1
+R9
+R18
+R19
+!i113 1
+R12
+R13
