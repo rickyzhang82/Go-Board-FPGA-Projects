@@ -1,13 +1,14 @@
 library ieee;
 use ieee.std_logic_1164.all;
 
-entity UART_RX_To_7_Seg_Top is
+entity UART_Loopback_Top is
     port (
         -- clock at 25Mhz
         i_Clk         : in  std_logic;
 
         -- UART data
         i_UART_RX     : in  std_logic;
+        o_UART_TX     : out std_logic;
 
         -- Segment2 is lower digit, Segment1 is upper digit
         o_Segment1_A  : out std_logic;
@@ -25,9 +26,9 @@ entity UART_RX_To_7_Seg_Top is
         o_Segment2_F  : out std_logic;
         o_Segment2_G  : out std_logic        
     );
-end entity UART_RX_To_7_Seg_Top;
+end entity UART_Loopback_Top;
 
-architecture rtl of UART_RX_To_7_Seg_Top is
+architecture rtl of UART_Loopback_Top is
 
     -- 25 Mhz / 115200 Baud = 217 clock per bit
     constant    c_CLKS_PER_BIT      : integer           := 217;
@@ -35,8 +36,10 @@ architecture rtl of UART_RX_To_7_Seg_Top is
     constant    c_STOP_BIT          : std_logic         := '1';
     constant    c_NUM_DATA_BITS     : integer           := 8;
 
-    signal      w_RX_DV             : std_logic         := '0';
-    signal      w_RX_Byte           : std_logic_vector(7 downto 0);
+    signal      w_UART_DV           : std_logic         := '0';
+    signal      w_UART_Byte         : std_logic_vector(7 downto 0);
+    signal      w_TX_Active         : std_logic;
+    signal      w_TX_Serial         : std_logic;
     signal      w_BCD_Done          : std_logic;
     signal      w_Segment1_A        : std_logic; 
     signal      w_Segment1_B        : std_logic; 
@@ -65,16 +68,35 @@ begin
         port map (
             i_Clk           => i_Clk,
             i_RX_Serial     => i_UART_RX,
-            o_RX_DV         => w_RX_DV,
-            o_RX_Byte       => w_RX_Byte
+            o_RX_DV         => w_UART_DV,
+            o_RX_Byte       => w_UART_Byte
+        );
+    
+    UART_TX_INST : entity work.UART_TX
+        generic map(
+            g_CLKS_PER_BIT  => c_CLKS_PER_BIT,
+            g_START_BIT     => c_START_BIT,
+            g_STOP_BIT      => c_STOP_BIT,
+            g_NUM_DATA_BITS => c_NUM_DATA_BITS
+        )
+        port map (
+            i_Clk           => i_Clk,
+            i_TX_DV         => w_UART_DV,
+            i_TX_Byte       => w_UART_Byte,
+            o_TX_Active     => w_TX_Active,
+            o_TX_Done       => open,
+            o_TX_Serial     => w_TX_Serial
         );
 
+    -- set o_UART_TX high when TX data is not active
+    o_UART_TX <= w_TX_Serial when w_TX_Active = '1' else '1';
+    
     -- get higher digit segment display
     Binary_To_7Segment_INST1 : entity work.Binary_To_7Segment
     port map (
         i_Clk           => i_Clk,
         -- slice w_Count_BCD from 7th to 4th
-        i_Binary_Num    => w_RX_Byte(7 downto 4),
+        i_Binary_Num    => w_UART_Byte(7 downto 4),
         o_Segment_A     => w_Segment1_A,
         o_Segment_B     => w_Segment1_B,
         o_Segment_C     => w_Segment1_C,
@@ -89,7 +111,7 @@ begin
     port map (
         i_Clk           => i_Clk,
         -- slice w_Count_BCD from 3rd to 0
-        i_Binary_Num    => w_RX_Byte(3 downto 0),
+        i_Binary_Num    => w_UART_Byte(3 downto 0),
         o_Segment_A     => w_Segment2_A,
         o_Segment_B     => w_Segment2_B,
         o_Segment_C     => w_Segment2_C,
@@ -102,8 +124,8 @@ begin
     p_RX: process (i_Clk)
     begin
         if rising_edge(i_Clk) then
-            -- show two decimial digits when BCD done signal is ready
-            if w_RX_DV = '1' then
+            -- show two decimial digits when UART RX is data valid
+            if w_UART_DV = '1' then
                 -- Activate higher segment
                 o_Segment1_A <= not w_Segment1_A;
                 o_Segment1_B <= not w_Segment1_B;

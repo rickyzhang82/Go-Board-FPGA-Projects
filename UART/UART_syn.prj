@@ -2,8 +2,9 @@
 #-- Project file /home/Ricky/FPGA-Projects/Go-Board-FPGA-Projects/UART/UART_syn.prj
 #project files
 
+add_file -vhdl -lib work "src/UART_Loopback_Top.vhd" 
 add_file -vhdl -lib work "src/UART_RX.vhd" 
-add_file -vhdl -lib work "src/UART_RX_To_7_Seg_Top.vhd" 
+add_file -vhdl -lib work "src/UART_TX.vhd" 
 add_file -vhdl -lib work "../Common/Binary_To_7Segment.vhd" 
 add_file -constraint -lib work "Go_Board_Clock_Constraint.sdc"
 #implementation: "UART_Implmnt"

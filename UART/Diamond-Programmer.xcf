@@ -17,9 +17,9 @@
 				<BScanLen>1</BScanLen>
 				<BScanVal>0</BScanVal>
 			</Bypass>
-			<File>/home/Ricky/FPGA-Projects/Go-Board-FPGA-Projects/UART/UART_Implmnt/sbt/outputs/bitmap/UART_RX_To_7_Seg_Top_bitmap.bin</File>
-			<FileTime>01/10/21 22:45:31</FileTime>
-			<JedecChecksum>0x99CF</JedecChecksum>
+			<File>/home/Ricky/FPGA-Projects/Go-Board-FPGA-Projects/UART/UART_Implmnt/sbt/outputs/bitmap/UART_Loopback_Top_bitmap.bin</File>
+			<FileTime>01/14/21 00:05:00</FileTime>
+			<JedecChecksum>0x08FF</JedecChecksum>
 			<Operation>SPI Flash Erase,Program,Verify</Operation>
 			<Option>
 				<SVFVendor>JTAG STANDARD</SVFVendor>
@@ -61,7 +61,7 @@
 					<IDCode>0x10</IDCode>
 					<Package>8-pin SOIC</Package>
 					<Operation>SPI Flash Erase,Program,Verify</Operation>
-					<File>/home/Ricky/FPGA-Projects/Go-Board-FPGA-Projects/UART/UART_Implmnt/sbt/outputs/bitmap/UART_RX_To_7_Seg_Top_bitmap.bin</File>
+					<File>/home/Ricky/FPGA-Projects/Go-Board-FPGA-Projects/UART/UART_Implmnt/sbt/outputs/bitmap/UART_Loopback_Top_bitmap.bin</File>
 					<AddressBase>0x00000000</AddressBase>
 					<EndAddress>0x00008000</EndAddress>
 					<DeviceSize>1</DeviceSize>
