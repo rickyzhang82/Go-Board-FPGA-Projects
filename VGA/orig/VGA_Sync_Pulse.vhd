@@ -1,4 +1,8 @@
 -- This module is designed for 640x480 with a 25 MHz input clock.
+--
+-- In each i_Clk cycle, it bumps up one pixel count.
+-- If the pixel is in active area, o_HSync and O_Vsync is 1. Otherwise, 0.
+--
 
 library ieee;
 use ieee.std_logic_1164.all;

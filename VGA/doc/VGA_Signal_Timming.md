@@ -1,4 +1,7 @@
 Horizontal Timing
+=================
+
+- Signal Timing
 
 |Legend |Description         | 
 |-------|--------------------|
@@ -7,6 +10,7 @@ Horizontal Timing
 |C      |Back porch          |
 |D      |Active video time   |
 |E      |Front porch         |
+
 
 ```
 Video
@@ -19,3 +23,18 @@ __     _______________________________     ___________
   |-B-|                               |-B-| 
   |---------------A-------------------|
 ```
+
+The horizontal sync pulse marks the beginning and the end of one line.
+
+Vertical Timing
+===============
+
+- Signal Timing
+
+The vertical sync pulse marks the beginning and the end of one frame.
+
+![signal](vga-signal-format.png)
+
+Standard VGA 640x480@60Hz
+=========================
+
