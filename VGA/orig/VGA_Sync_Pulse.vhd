@@ -1,8 +1,8 @@
 -- This module is designed for 640x480 with a 25 MHz input clock.
---
+-- The pixel clock of 640 x 480 @60Hz is 25.175 MHz. 
+-- Go board i_Clk @ 25 MHz is approximately to 25.175 MHz.
 -- In each i_Clk cycle, it bumps up one pixel count.
 -- If the pixel is in active area, o_HSync and O_Vsync is 1. Otherwise, 0.
---
 
 library ieee;
 use ieee.std_logic_1164.all;
