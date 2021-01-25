@@ -96,6 +96,7 @@ begin
 
   
   -- Register syncs to align with output data.
+  -- delay one clock cycle
   p_Reg_Syncs : process (i_Clk) is
   begin
     if rising_edge(i_Clk) then
@@ -205,6 +206,7 @@ begin
   -----------------------------------------------------------------------------
   -- Select between different test patterns
   -----------------------------------------------------------------------------
+  -- delay one clock cycle
   p_TP_Select : process (i_Clk) is
   begin
     if rising_edge(i_Clk) then
