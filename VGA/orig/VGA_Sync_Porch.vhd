@@ -117,6 +117,24 @@ begin
 
   
   -- Purpose: Align input video to modified Sync pulses. (2 Clock Cycles of Delay)
+  -- The assignment below is to describe 6 trigger rather than programming assignment.
+  --
+  -- r_Red_Video <= i_Red_Video;
+  -- r_Grn_Video <= i_Grn_Video;
+  -- r_Blu_Video <= i_Blu_Video;
+  --
+  -- o_Red_Video <= r_Red_Video;
+  -- o_Grn_Video <= r_Grn_Video;
+  -- o_Blu_Video <= r_Blu_Video;
+  -- 
+  -- After one clock cycle, i_Red_Video => r_Red_Video. After another clock cycle, o_Red_Video <= r_Red_Video.
+  --
+  -- Let's say, 
+  -- at time 0, i_Red_Video=1, r_Red_Video=0, o_Red_Video=0.
+  -- at time 1, i_Red_Video=whatever0, r_Red_Video=1, o_Red_Video=0.
+  -- at time 2, i_Red_Video=whatever1, r_Red_Video=whatever0, o_Red_Video=1.
+  --
+
   p_Video_Align : process (i_Clk) is
   begin
     if rising_edge(i_Clk) then
