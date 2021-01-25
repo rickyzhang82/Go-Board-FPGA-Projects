@@ -7,27 +7,38 @@ Horizontal Timing
 |-------|--------------------|
 |A      |scanline time       |
 |B      |Sync pulse length   |
-|C      |Front porch         |
+|C      |Back porch          |
 |D      |Active video time   |
-|E      |Back porch          |
+|E      |Front porch         |
 
 
 ```
 Video
+
+pixel 0 start at |.
+pixel 639 ends at |. active video ends.
+pixel 655 ends at |. active video + front portch ends.
+pixel 751 ends at |. active video + front porch + signal pulse ends.
+pixel 799 ends at |. active video + front porch + signal pulse + back porch ends.
+
+          0|                   639|655|751|799|
             ______________________             ___________________
 ___________| VIDEO                |___________| VIDEO (next line)
        |-C-|----------D-----------|-E-|   |-C-|----------D-------
 
 Hsync
 
-When HSYNC = 1, line video is active. = Front Porch (C) + Active Video (D) + Back Porch (E)
-When HSYNC = 0, line video is inactive.
-The rising HSYNC signal triggers horizontal video line.
-
 __     _______________________________     ___________
   |___|                               |___| 
   |-B-|                               |-B-| 
   |---------------A-------------------|
+
+Back Portch -> Active Video -> Front Porch -> Sync Pulse
+
+When HSYNC = 1, line video is active. = Back Porch (C) + Active Video (D) + Front Porch (E)
+When HSYNC = 0, line video is inactive.
+The rising HSYNC signal triggers horizontal video line.
+
 ```
 
 The horizontal sync pulse marks the beginning and the end of one line.
