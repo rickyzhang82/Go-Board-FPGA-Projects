@@ -93,6 +93,7 @@ begin
 	  
 
   -- Purpose: Modifies the HSync and VSync signals to include Front/Back Porch
+  -- delay one clock
   p_Sync_Porch : process (i_Clk) is
   begin
     if rising_edge(i_Clk) then
