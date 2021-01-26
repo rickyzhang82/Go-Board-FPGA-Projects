@@ -37,6 +37,8 @@ architecture RTL of Sync_To_Count is
 begin
 
   -- Register syncs to align with output data.
+  -- r_VSync, r_HSync delay one clock cycle
+  -- o_VSync, o_HSync directly wire to r_VSync, r_HSync
   p_Reg_Syncs : process (i_Clk) is
   begin
     if rising_edge(i_Clk) then
@@ -47,6 +49,8 @@ begin
 
 
   -- Keep track of Row/Column counters.
+  -- r_Col_Count, r_Row_Count delay one clock cycle
+  -- o_Row_Count, o_Col_Count directly wire to r_Col_Count, r_Row_Count
   p_Row_Col_Count : process (i_Clk) is
   begin
     if rising_edge(i_Clk) then

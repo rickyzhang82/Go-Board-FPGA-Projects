@@ -96,7 +96,7 @@ begin
 
   
   -- Register syncs to align with output data.
-  -- delay one clock cycle
+  -- o_VSync and o_HSync delay one clock cycle relative to w_VSync and w_HSync
   p_Reg_Syncs : process (i_Clk) is
   begin
     if rising_edge(i_Clk) then
@@ -206,7 +206,10 @@ begin
   -----------------------------------------------------------------------------
   -- Select between different test patterns
   -----------------------------------------------------------------------------
-  -- delay one clock cycle
+  --
+  -- o_Xxx_Video delay one clock cycle relative to Pattern_Xxx. 
+  -- Pattern_Xxx is in sync with w_Row_Count and w_Col_Count.
+  --
   p_TP_Select : process (i_Clk) is
   begin
     if rising_edge(i_Clk) then

@@ -205,7 +205,12 @@ begin
       o_Blu_Video => w_Blu_Video_TP,
       o_Grn_Video => w_Grn_Video_TP
       );
-   
+  
+  --
+  -- i_HSync, i_VSync maps to w_HSync_VGA and w_VSync_VGA, instead of w_HSync_TP, w_VSync_TP!
+  -- w_HSync_VGA is one clock cycel behind w_HSync_TP
+  -- o_Xxx_Video delays two clock cycles.
+  --
   VGA_Sync_Porch_Inst : entity work.VGA_Sync_Porch
     generic map (
       g_Video_Width => c_VIDEO_WIDTH,
