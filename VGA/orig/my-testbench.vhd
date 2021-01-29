@@ -72,20 +72,28 @@ architecture Behave of VGA_Test_Patterns_TB is
 
   constant c_CLK_PERIOD  : time    := 40 ns; -- 25 MHz clock
   constant c_VIDEO_WIDTH : integer := 3;     -- 3 bits per pixel
-  constant c_TOTAL_COLS  : integer := 10;
-  constant c_TOTAL_ROWS  : integer := 6;
-  constant c_ACTIVE_COLS : integer := 8;
-  constant c_ACTIVE_ROWS : integer := 4;
+  constant c_TOTAL_COLS  : integer := 800;
+  constant c_TOTAL_ROWS  : integer := 525;
+  constant c_ACTIVE_COLS : integer := 640;
+  constant c_ACTIVE_ROWS : integer := 480;
 
   signal r_Clk : std_logic := '0';
   
-  signal w_HSync_Start, w_VSync_Start : std_logic;
   signal w_HSync_TP,    w_VSync_TP    : std_logic;
   
   signal w_Red_Video_TP    : std_logic_vector(c_VIDEO_WIDTH-1 downto 0);
   signal w_Grn_Video_TP    : std_logic_vector(c_VIDEO_WIDTH-1 downto 0);
   signal w_Blu_Video_TP    : std_logic_vector(c_VIDEO_WIDTH-1 downto 0);
-
+  
+  -- Common VGA Signals
+  signal w_HSync_VGA       : std_logic;
+  signal w_VSync_VGA       : std_logic;
+  signal w_HSync_Porch     : std_logic;
+  signal w_VSync_Porch     : std_logic;
+  signal w_Red_Video_Porch : std_logic_vector(c_VIDEO_WIDTH-1 downto 0);
+  signal w_Grn_Video_Porch : std_logic_vector(c_VIDEO_WIDTH-1 downto 0);
+  signal w_Blu_Video_Porch : std_logic_vector(c_VIDEO_WIDTH-1 downto 0);
+ 
 begin
 
   r_Clk <= not r_Clk after c_CLK_PERIOD/2;
@@ -99,8 +107,8 @@ begin
       g_Active_Rows => c_ACTIVE_ROWS)
     port map (
       i_Clk       => r_Clk,
-      o_HSync     => w_HSync_Start,
-      o_VSync     => w_VSync_Start,
+      o_HSync     => w_HSync_VGA,
+      o_VSync     => w_VSync_VGA,
       o_Col_Count => open,
       o_Row_Count => open);
   
@@ -116,15 +124,15 @@ begin
     port map (
       i_Clk       => r_Clk,
       i_Pattern   => "0101",    -- Color Bars
-      i_HSync     => w_HSync_Start,
-      i_VSync     => w_VSync_Start,
+      i_HSync     => w_HSync_VGA,
+      i_VSync     => w_VSync_VGA,
       o_HSync     => w_HSync_TP,
       o_VSync     => w_VSync_TP,
       o_Red_Video => w_Red_Video_TP,
       o_Grn_Video => w_Grn_Video_TP,
       o_Blu_Video => w_Blu_Video_TP);
    
-  -- TODO setup Porch module 
+  -- setup Porch module 
   VGA_Sync_Porch_Inst : VGA_Sync_Porch
     generic map (
       g_Video_Width => c_VIDEO_WIDTH,
@@ -134,7 +142,7 @@ begin
       g_ACTIVE_ROWS => c_ACTIVE_ROWS 
       )
     port map (
-      i_Clk       => i_Clk,
+      i_Clk       => r_Clk,
       i_HSync     => w_HSync_VGA,
       i_VSync     => w_VSync_VGA,
       i_Red_Video => w_Red_Video_TP,
@@ -150,7 +158,7 @@ begin
      
   process is
   begin
-    wait for 5 us;
+    wait for 33333 us;
     assert false report "Test Complete" severity failure;
   end process;
     
