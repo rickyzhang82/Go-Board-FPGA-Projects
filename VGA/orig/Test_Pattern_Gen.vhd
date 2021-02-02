@@ -14,6 +14,10 @@
 -- Pattern 4: Checkerboard white/black
 -- Pattern 5: Color Bars
 -- Pattern 6: White Box with Border (2 pixels)
+--
+-- timing analysis:
+-- o_HSync, o_VSync, o_Red_Video, o_Grn_Video and o_Blue_Video delay 
+-- **two** clock cycles relative to i_HSync, i_VSync
 
 library ieee;
 use ieee.std_logic_1164.all;
@@ -97,6 +101,7 @@ begin
   
   -- Register syncs to align with output data.
   -- o_VSync and o_HSync delay one clock cycle relative to w_VSync and w_HSync
+  -- o_VSync and o_HSync delay two clock cycles relative to i_VSync and i_HSync
   p_Reg_Syncs : process (i_Clk) is
   begin
     if rising_edge(i_Clk) then
@@ -204,12 +209,26 @@ begin
   Pattern_Blu(6) <= Pattern_Red(6);
 
   -----------------------------------------------------------------------------
+  -- Pattern 7: Black Dots and White Dots
+  -- For simulation purpose,
+  -- create a black dot in odd numbered column and 
+  -- a white dot in even numberedcolumn
+  -----------------------------------------------------------------------------
+  Pattern_Red(7) <= "010"           when (to_integer(unsigned(w_Col_Count)) = 0) else
+                    (others => '1') when (to_integer(unsigned(w_Col_Count)) mod 2 = 0 
+                                          and to_integer(unsigned(w_Col_Count)) /= 0) else
+                    (others => '0');
+  Pattern_Grn(7) <= Pattern_Red(7);
+  Pattern_Blu(7) <= Pattern_Red(7);
+
+  -----------------------------------------------------------------------------
   -- Select between different test patterns
   -----------------------------------------------------------------------------
   --
-  -- o_Xxx_Video delay one clock cycle relative to Pattern_Xxx. 
+  -- o_Xxx_Video delays one clock cycle relative to Pattern_Xxx. 
   -- Pattern_Xxx is in sync with w_Row_Count and w_Col_Count.
   --
+  -- o_Xxx_video delays two clock cycles relative to i_VSync and i_HSync
   p_TP_Select : process (i_Clk) is
   begin
     if rising_edge(i_Clk) then
@@ -242,6 +261,10 @@ begin
           o_Red_Video <= Pattern_Red(6);
           o_Grn_Video <= Pattern_Grn(6);
           o_Blu_Video <= Pattern_Blu(6);
+        when "0111" =>
+          o_Red_Video <= Pattern_Red(7);
+          o_Grn_Video <= Pattern_Grn(7);
+          o_Blu_Video <= Pattern_Blu(7);
         when others =>
           o_Red_Video <= Pattern_Red(0);
           o_Grn_Video <= Pattern_Grn(0);

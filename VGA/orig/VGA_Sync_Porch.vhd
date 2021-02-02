@@ -9,6 +9,11 @@
 -- removed this notion of the front and back porches.  Remember that VGA is an
 -- analog interface.
 -- This module is designed for 640x480 with a 25 MHz input clock.
+-- 
+-- timing analysis:
+-- o_HSync and o_VSync delay *two* clock cycles relative to i_HSync and i_VSync
+-- o_Red_Video, o_Grn_Video and o_Blu_Video delay *two* clock cycles relative to i_Xxx_Video
+--
 library ieee;
 use ieee.std_logic_1164.all;
 use ieee.numeric_std.all;

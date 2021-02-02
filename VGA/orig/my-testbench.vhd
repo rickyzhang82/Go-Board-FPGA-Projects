@@ -113,7 +113,7 @@ begin
       o_Row_Count => open);
   
   
-  -- Drives Red/Grn/Blue video - Test Pattern 5 (Color Bars)
+  -- Drives Red/Grn/Blue video
   Test_Pattern_Gen_Inst : Test_Pattern_Gen
     generic map (
       g_VIDEO_WIDTH => c_VIDEO_WIDTH,
@@ -123,7 +123,7 @@ begin
       g_ACTIVE_ROWS => c_ACTIVE_ROWS)
     port map (
       i_Clk       => r_Clk,
-      i_Pattern   => "0101",    -- Color Bars
+      i_Pattern   => "0111",    -- black dots and white dots
       i_HSync     => w_HSync_VGA,
       i_VSync     => w_VSync_VGA,
       o_HSync     => w_HSync_TP,
@@ -158,7 +158,7 @@ begin
      
   process is
   begin
-    wait for 33333 us;
+    wait for 33600 us;
     assert false report "Test Complete" severity failure;
   end process;
     

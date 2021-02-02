@@ -3,6 +3,11 @@
 -- It will align the Row/Col counters to the output Sync pulses.
 -- Useful for any module that needs to keep track of which Row/Col position we
 -- are on in the middle of a frame.
+--
+-- timing analysis:
+-- o_HSync, o_VSync, o_Col_Count and o_Row_Count delay **one** clock cycle
+-- relative to i_HSync and i_VSync
+--
 library ieee;
 use ieee.std_logic_1164.all;
 use ieee.numeric_std.all;

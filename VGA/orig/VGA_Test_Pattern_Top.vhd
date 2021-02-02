@@ -209,7 +209,7 @@ begin
   --
   -- i_HSync, i_VSync maps to w_HSync_VGA and w_VSync_VGA, instead of w_HSync_TP, w_VSync_TP!
   -- w_HSync_VGA is one clock cycel behind w_HSync_TP
-  -- o_Xxx_Video delays two clock cycles.
+  -- o_Xxx_Video delays two clock cycles relative i_Xxx_Video.
   --
   VGA_Sync_Porch_Inst : entity work.VGA_Sync_Porch
     generic map (

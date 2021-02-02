@@ -3,6 +3,9 @@
 -- Go board i_Clk @ 25 MHz is approximately to 25.175 MHz.
 -- In each i_Clk cycle, it bumps up one pixel count.
 -- If the pixel is in active area, o_HSync and O_Vsync is 1. Otherwise, 0.
+--
+-- time analysis:
+-- o_HSync, o_VSync, o_Col_Count, o_Row_Count no delay relative i_Clk
 
 library ieee;
 use ieee.std_logic_1164.all;
