@@ -1,0 +1,57 @@
+# Loading project VGA
+# Compile of Sync_To_Count.vhd was successful.
+# Compile of Test_Pattern_Gen.vhd was successful.
+# Compile of VGA_Sync_Porch.vhd was successful.
+# Compile of VGA_Sync_Pulse.vhd was successful.
+# Compile of my-testbench.vhd was successful.
+# 5 compiles, 0 failed with no errors.
+vsim work.vga_test_patterns_tb
+# vsim work.vga_test_patterns_tb 
+# Start time: 23:08:11 on Feb 03,2021
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading work.vga_test_patterns_tb(behave)
+# Loading ieee.numeric_std(body)
+# Loading work.vga_sync_pulses(rtl)
+# Loading work.test_pattern_gen(rtl)
+# Loading work.sync_to_count(rtl)
+# Loading work.vga_sync_porch(rtl)
+add wave -position insertpoint sim:/vga_test_patterns_tb/*
+run -all
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ns  Iteration: 0  Instance: /vga_test_patterns_tb/Test_Pattern_Gen_Inst
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ns  Iteration: 0  Instance: /vga_test_patterns_tb/Test_Pattern_Gen_Inst
+# ** Warning: NUMERIC_STD."<": metavalue detected, returning FALSE
+#    Time: 0 ns  Iteration: 0  Instance: /vga_test_patterns_tb/Test_Pattern_Gen_Inst
+# ** Warning: NUMERIC_STD."<": metavalue detected, returning FALSE
+#    Time: 0 ns  Iteration: 0  Instance: /vga_test_patterns_tb/Test_Pattern_Gen_Inst
+# ** Warning: NUMERIC_STD."<": metavalue detected, returning FALSE
+#    Time: 0 ns  Iteration: 0  Instance: /vga_test_patterns_tb/Test_Pattern_Gen_Inst
+# ** Warning: NUMERIC_STD."<": metavalue detected, returning FALSE
+#    Time: 0 ns  Iteration: 0  Instance: /vga_test_patterns_tb/Test_Pattern_Gen_Inst
+# ** Warning: NUMERIC_STD."<": metavalue detected, returning FALSE
+#    Time: 0 ns  Iteration: 0  Instance: /vga_test_patterns_tb/Test_Pattern_Gen_Inst
+# ** Warning: NUMERIC_STD."<": metavalue detected, returning FALSE
+#    Time: 0 ns  Iteration: 0  Instance: /vga_test_patterns_tb/Test_Pattern_Gen_Inst
+# ** Warning: NUMERIC_STD."<": metavalue detected, returning FALSE
+#    Time: 0 ns  Iteration: 0  Instance: /vga_test_patterns_tb/Test_Pattern_Gen_Inst
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ns  Iteration: 0  Instance: /vga_test_patterns_tb/Test_Pattern_Gen_Inst
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ns  Iteration: 0  Instance: /vga_test_patterns_tb/Test_Pattern_Gen_Inst
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ns  Iteration: 0  Instance: /vga_test_patterns_tb/Test_Pattern_Gen_Inst
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ns  Iteration: 0  Instance: /vga_test_patterns_tb/Test_Pattern_Gen_Inst
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ns  Iteration: 0  Instance: /vga_test_patterns_tb/Test_Pattern_Gen_Inst
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ns  Iteration: 0  Instance: /vga_test_patterns_tb/Test_Pattern_Gen_Inst
+# ** Failure: Test Complete
+#    Time: 33600 us  Iteration: 0  Process: /vga_test_patterns_tb/line__159 File: /home/Ricky/FPGA-Projects/Go-Board-FPGA-Projects/VGA/test/my-testbench.vhd
+# Break in Process line__159 at /home/Ricky/FPGA-Projects/Go-Board-FPGA-Projects/VGA/test/my-testbench.vhd line 162
+quit
+# End time: 23:11:07 on Feb 03,2021, Elapsed time: 0:02:56
+# Errors: 1, Warnings: 22

@@ -1,0 +1,224 @@
+m255
+K4
+z2
+!s11e vcom 2020.1 2020.02, Feb 28 2020
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 d/home/Ricky/FPGA-Projects/Go-Board-FPGA-Projects/VGA/modelsim
+Esync_to_count
+Z1 w1612304473
+Z2 DPx4 ieee 11 numeric_std 0 22 aU^R8eGcicLcUFIaBQSL>3
+Z3 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
+Z4 DPx4 ieee 14 std_logic_1164 0 22 cVAk:aDinOX8^VGI1ekP<3
+!i122 0
+R0
+Z5 8/home/Ricky/FPGA-Projects/Go-Board-FPGA-Projects/VGA/src/Sync_To_Count.vhd
+Z6 F/home/Ricky/FPGA-Projects/Go-Board-FPGA-Projects/VGA/src/Sync_To_Count.vhd
+l0
+L15 1
+VLY1EZIAPfO:icGRfI4>aZ3
+!s100 2A>WL]LUlUVV91`>4VZA80
+Z7 OV;C;2020.1;71
+32
+Z8 !s110 1612411680
+!i10b 1
+Z9 !s108 1612411680.000000
+Z10 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|/home/Ricky/FPGA-Projects/Go-Board-FPGA-Projects/VGA/src/Sync_To_Count.vhd|
+Z11 !s107 /home/Ricky/FPGA-Projects/Go-Board-FPGA-Projects/VGA/src/Sync_To_Count.vhd|
+!i113 1
+Z12 o-work work -2002 -explicit
+Z13 tExplicit 1 CvgOpt 0
+Artl
+R2
+R3
+R4
+DEx4 work 13 sync_to_count 0 22 LY1EZIAPfO:icGRfI4>aZ3
+!i122 0
+l42
+L32 59
+V1CZmDFJiEY@W49^clWNge0
+!s100 e;Eh1UX93mHNQ3WMLh2TK1
+R7
+32
+R8
+!i10b 1
+R9
+R10
+R11
+!i113 1
+R12
+R13
+Etest_pattern_gen
+R1
+R2
+R3
+R4
+!i122 1
+R0
+Z14 8/home/Ricky/FPGA-Projects/Go-Board-FPGA-Projects/VGA/src/Test_Pattern_Gen.vhd
+Z15 F/home/Ricky/FPGA-Projects/Go-Board-FPGA-Projects/VGA/src/Test_Pattern_Gen.vhd
+l0
+L26 1
+VbG3V7g]hlCdj4n=_mc4[Q0
+!s100 V5ag2]0e^lLL@?764@4W73
+R7
+32
+R8
+!i10b 1
+R9
+Z16 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|/home/Ricky/FPGA-Projects/Go-Board-FPGA-Projects/VGA/src/Test_Pattern_Gen.vhd|
+Z17 !s107 /home/Ricky/FPGA-Projects/Go-Board-FPGA-Projects/VGA/src/Test_Pattern_Gen.vhd|
+!i113 1
+R12
+R13
+Artl
+R2
+R3
+R4
+DEx4 work 16 test_pattern_gen 0 22 bG3V7g]hlCdj4n=_mc4[Q0
+!i122 1
+l84
+L48 230
+VVJ^4O1_[0R?mJl2LXSR_10
+!s100 lZc3VjL0bkPUUQzhVgRD@2
+R7
+32
+R8
+!i10b 1
+R9
+R16
+R17
+!i113 1
+R12
+R13
+Evga_sync_porch
+Z18 w1612411557
+R2
+R3
+R4
+!i122 2
+R0
+Z19 8/home/Ricky/FPGA-Projects/Go-Board-FPGA-Projects/VGA/src/VGA_Sync_Porch.vhd
+Z20 F/home/Ricky/FPGA-Projects/Go-Board-FPGA-Projects/VGA/src/VGA_Sync_Porch.vhd
+l0
+L21 1
+VOT@l3IOFaS>KZG04LfQng2
+!s100 9OGN2eR3X^1@<h3K=9oh50
+R7
+32
+R8
+!i10b 1
+R9
+Z21 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|/home/Ricky/FPGA-Projects/Go-Board-FPGA-Projects/VGA/src/VGA_Sync_Porch.vhd|
+Z22 !s107 /home/Ricky/FPGA-Projects/Go-Board-FPGA-Projects/VGA/src/VGA_Sync_Porch.vhd|
+!i113 1
+R12
+R13
+Artl
+R2
+R3
+R4
+DEx4 work 14 vga_sync_porch 0 22 OT@l3IOFaS>KZG04LfQng2
+!i122 2
+l78
+L46 79
+VE]7b>4Z_:8;8A4jK93eil1
+!s100 gzG3kU=iAg;zPAFWGNign1
+R7
+32
+R8
+!i10b 1
+R9
+R21
+R22
+!i113 1
+R12
+R13
+Evga_sync_pulses
+R1
+R2
+R3
+R4
+!i122 3
+R0
+Z23 8/home/Ricky/FPGA-Projects/Go-Board-FPGA-Projects/VGA/src/VGA_Sync_Pulse.vhd
+Z24 F/home/Ricky/FPGA-Projects/Go-Board-FPGA-Projects/VGA/src/VGA_Sync_Pulse.vhd
+l0
+L14 1
+Va7l<UP3@`NXGD=M<6J=el3
+!s100 UgZ6b>dH9N_fSh@AzA0UI3
+R7
+32
+R8
+!i10b 1
+R9
+Z25 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|/home/Ricky/FPGA-Projects/Go-Board-FPGA-Projects/VGA/src/VGA_Sync_Pulse.vhd|
+Z26 !s107 /home/Ricky/FPGA-Projects/Go-Board-FPGA-Projects/VGA/src/VGA_Sync_Pulse.vhd|
+!i113 1
+R12
+R13
+Artl
+R2
+R3
+R4
+DEx4 work 15 vga_sync_pulses 0 22 a7l<UP3@`NXGD=M<6J=el3
+!i122 3
+l35
+L30 30
+V<84d5`0:<Fz5n0cbS:8e23
+!s100 fO11^T5RRk2gY^Wc?@g;V0
+R7
+32
+R8
+!i10b 1
+R9
+R25
+R26
+!i113 1
+R12
+R13
+Evga_test_patterns_tb
+Z27 w1612410621
+R3
+R4
+!i122 4
+R0
+Z28 8/home/Ricky/FPGA-Projects/Go-Board-FPGA-Projects/VGA/test/my-testbench.vhd
+Z29 F/home/Ricky/FPGA-Projects/Go-Board-FPGA-Projects/VGA/test/my-testbench.vhd
+l0
+L4 1
+VQaj9Gd1Ez;df`^cPM^[ST3
+!s100 ?l0;kgzX0EOaY_f27Wm[12
+R7
+32
+R8
+!i10b 1
+R9
+Z30 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|/home/Ricky/FPGA-Projects/Go-Board-FPGA-Projects/VGA/test/my-testbench.vhd|
+!s107 /home/Ricky/FPGA-Projects/Go-Board-FPGA-Projects/VGA/test/my-testbench.vhd|
+!i113 1
+R12
+R13
+Abehave
+R3
+R4
+DEx4 work 20 vga_test_patterns_tb 0 22 Qaj9Gd1Ez;df`^cPM^[ST3
+!i122 4
+l97
+L7 159
+VeP?Ch^VRcemI_l@]KMF9H1
+!s100 a4CzA:2So[g70Q[PDXZ3K2
+R7
+32
+R8
+!i10b 1
+R9
+R30
+Z31 !s107 /home/Ricky/FPGA-Projects/Go-Board-FPGA-Projects/VGA/test/my-testbench.vhd|
+!i113 1
+R12
+R13

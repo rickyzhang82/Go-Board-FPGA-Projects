@@ -1,0 +1,78 @@
+Running in Lattice mode
+
+
+Starting:    /home/Ricky/lscc/iCEcube2.2017.08/synpbase/linux_a_64/mbin/synbatch
+Install:     /home/Ricky/lscc/iCEcube2.2017.08/synpbase
+Hostname:    gtx
+Date:        Wed Feb  3 23:16:19 2021
+Version:     L-2016.09L+ice40
+
+Arguments:   -product synplify_pro -batch VGA_syn.prj
+ProductType: synplify_pro
+
+
+
+
+
+log file: "/home/Ricky/FPGA-Projects/Go-Board-FPGA-Projects/VGA/VGA_Implmnt/VGA.srr"
+Running: VGA_Implmnt in foreground
+
+Running VGA_syn|VGA_Implmnt
+
+Running: compile (Compile) on VGA_syn|VGA_Implmnt
+# Wed Feb  3 23:16:19 2021
+
+Running: compile_flow (Compile Process) on VGA_syn|VGA_Implmnt
+# Wed Feb  3 23:16:19 2021
+
+Running: compiler (Compile Input) on VGA_syn|VGA_Implmnt
+# Wed Feb  3 23:16:19 2021
+Copied /home/Ricky/FPGA-Projects/Go-Board-FPGA-Projects/VGA/VGA_Implmnt/synwork/VGA_comp.srs to /home/Ricky/FPGA-Projects/Go-Board-FPGA-Projects/VGA/VGA_Implmnt/VGA.srs
+
+compiler completed
+# Wed Feb  3 23:16:20 2021
+
+Return Code: 0
+Run Time:00h:00m:01s
+
+Running: multi_srs_gen (Multi-srs Generator) on VGA_syn|VGA_Implmnt
+# Wed Feb  3 23:16:20 2021
+
+multi_srs_gen completed
+# Wed Feb  3 23:16:20 2021
+
+Return Code: 0
+Run Time:00h:00m:00s
+Copied /home/Ricky/FPGA-Projects/Go-Board-FPGA-Projects/VGA/VGA_Implmnt/synwork/VGA_mult.srs to /home/Ricky/FPGA-Projects/Go-Board-FPGA-Projects/VGA/VGA_Implmnt/VGA.srs
+Complete: Compile Process on VGA_syn|VGA_Implmnt
+
+Running: premap (Pre-mapping) on VGA_syn|VGA_Implmnt
+# Wed Feb  3 23:16:20 2021
+
+premap completed
+# Wed Feb  3 23:16:21 2021
+
+Return Code: 0
+Run Time:00h:00m:01s
+Complete: Compile on VGA_syn|VGA_Implmnt
+
+Running: map (Map) on VGA_syn|VGA_Implmnt
+# Wed Feb  3 23:16:21 2021
+License granted for 4 parallel jobs
+
+Running: fpga_mapper (Map & Optimize) on VGA_syn|VGA_Implmnt
+# Wed Feb  3 23:16:21 2021
+Copied /home/Ricky/FPGA-Projects/Go-Board-FPGA-Projects/VGA/VGA_Implmnt/synwork/VGA_m.srm to /home/Ricky/FPGA-Projects/Go-Board-FPGA-Projects/VGA/VGA_Implmnt/VGA.srm
+
+fpga_mapper completed with warnings
+# Wed Feb  3 23:16:22 2021
+
+Return Code: 1
+Run Time:00h:00m:01s
+Complete: Map on VGA_syn|VGA_Implmnt
+Complete: Logic Synthesis on VGA_syn|VGA_Implmnt
+
+exit status=0
+
+exit status=0
+
