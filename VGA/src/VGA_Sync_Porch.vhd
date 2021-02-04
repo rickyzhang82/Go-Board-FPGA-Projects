@@ -11,8 +11,8 @@
 -- This module is designed for 640x480 with a 25 MHz input clock.
 -- 
 -- timing analysis:
--- o_HSync and o_VSync delay *two* clock cycles relative to i_HSync and i_VSync
--- o_Red_Video, o_Grn_Video and o_Blu_Video delay *two* clock cycles relative to i_Xxx_Video
+-- o_HSync and o_VSync delay **two** clock cycles relative to i_HSync and i_VSync
+-- o_Red_Video, o_Grn_Video and o_Blu_Video delay **zero** clock cycles relative to i_Xxx_Video
 --
 library ieee;
 use ieee.std_logic_1164.all;
@@ -45,8 +45,8 @@ end entity VGA_Sync_Porch;
 
 architecture RTL of VGA_Sync_Porch is
 
-  constant c_FRONT_PORCH_HORZ : integer := 18;
-  constant c_BACK_PORCH_HORZ  : integer := 50;
+  constant c_FRONT_PORCH_HORZ : integer := 16;
+  constant c_BACK_PORCH_HORZ  : integer := 48;
   constant c_FRONT_PORCH_VERT : integer := 10;
   constant c_BACK_PORCH_VERT  : integer := 33;
 
@@ -75,10 +75,6 @@ architecture RTL of VGA_Sync_Porch is
   signal w_Col_Count : std_logic_vector(9 downto 0);
   signal w_Row_Count : std_logic_vector(9 downto 0);
 
-  signal r_Red_Video : std_logic_vector(g_VIDEO_WIDTH-1 downto 0) := (others => '0');
-  signal r_Grn_Video : std_logic_vector(g_VIDEO_WIDTH-1 downto 0) := (others => '0');
-  signal r_Blu_Video : std_logic_vector(g_VIDEO_WIDTH-1 downto 0) := (others => '0');
-  
 begin
 
   Sync_To_Count_Porch_inst : Sync_To_Count
@@ -121,37 +117,8 @@ begin
   o_HSync <= r_HSync;
   o_VSync <= r_VSync;
 
-  
-  -- Purpose: Align input video to modified Sync pulses. (2 Clock Cycles of Delay)
-  -- The assignment below is to describe 6 trigger rather than programming assignment.
-  --
-  -- r_Red_Video <= i_Red_Video;
-  -- r_Grn_Video <= i_Grn_Video;
-  -- r_Blu_Video <= i_Blu_Video;
-  --
-  -- o_Red_Video <= r_Red_Video;
-  -- o_Grn_Video <= r_Grn_Video;
-  -- o_Blu_Video <= r_Blu_Video;
-  -- 
-  -- After one clock cycle, i_Red_Video => r_Red_Video. After another clock cycle, o_Red_Video <= r_Red_Video.
-  --
-  -- Let's say, 
-  -- at time 0, i_Red_Video=1, r_Red_Video=0, o_Red_Video=0.
-  -- at time 1, i_Red_Video=whatever0, r_Red_Video=1, o_Red_Video=0.
-  -- at time 2, i_Red_Video=whatever1, r_Red_Video=whatever0, o_Red_Video=1.
-  --
+  o_Red_Video <= i_Red_Video;
+  o_Grn_Video <= i_Grn_Video;
+  o_Blu_Video <= i_Blu_Video;
 
-  p_Video_Align : process (i_Clk) is
-  begin
-    if rising_edge(i_Clk) then
-      r_Red_Video <= i_Red_Video;
-      r_Grn_Video <= i_Grn_Video;
-      r_Blu_Video <= i_Blu_Video;
-
-      o_Red_Video <= r_Red_Video;
-      o_Grn_Video <= r_Grn_Video;
-      o_Blu_Video <= r_Blu_Video;
-    end if;
-  end process p_Video_Align;
-  
 end architecture RTL;
